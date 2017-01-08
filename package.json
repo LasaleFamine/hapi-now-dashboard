@@ -20,7 +20,7 @@
 	"scripts": {
 		"start": "node src/server.js",
 		"dev": "supervisor src/server.js",
-		"test": "xo"
+		"test": "xo --ignore src/client"
 	},
 	"dependencies": {
 		"boom": "^4.2.0",

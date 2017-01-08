@@ -22,7 +22,7 @@ server.register([Inert], err => {
 
 	//server.auth.strategy('simple', 'bearer-access-token', validation)
 
-	//server.route(clientRoutes)
+	server.route(clientRoutes)
 	server.route(routes)
 
 	server.start(err => {
