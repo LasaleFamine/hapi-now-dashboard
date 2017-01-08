@@ -1,0 +1,3 @@
+[submodule "src/client/public/app"]
+	path = src/client/public/app
+	url = https://github.com/LasaleFamine/now-dashboard
