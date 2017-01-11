@@ -12,8 +12,17 @@ const internals = {
 module.exports = [
 	{
 		path: `${internals.restapi}/deployments`,
-		method: 'get',
+		method: 'GET',
 		handler: handlers.deployments,
+		config: {
+			validate: {
+				query: Schema.deploymentsSchema.requiredKeys('token')
+			}
+		}
+	}, {
+		path: `${internals.restapi}/deployments/{id}`,
+		method: 'DELETE',
+		handler: handlers.deploymentsDelete,
 		config: {
 			validate: {
 				query: Schema.deploymentsSchema.requiredKeys('token')

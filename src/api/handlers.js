@@ -34,11 +34,35 @@ internals.deployments = (request, reply) => {
 	})
 	.then(res => {
 		console.log(res)
-		return reply(res.body).code(201)
+		return reply(res.body)
 	})
 	.catch(err => {
 		if (err.statusCode === 403) {
-			return reply(Boom.forbidden()).code(403)
+			return reply(Boom.forbidden())
+		}
+
+		return reply(Boom.badRequest())
+	})
+}
+
+internals.deploymentsDelete = (request, reply) => {
+	const token = request.query.token
+	const id = request.params.id
+
+	got.delete(`${API_URL}/deployments/${id}`, {
+		json: true,
+		headers: {
+			Authorization: `Bearer ${token}`
+		}
+	})
+	.then(res => {
+		console.log(res)
+		return reply(res.body)
+	})
+	.catch(err => {
+		console.log(err)
+		if (err.statusCode === 403) {
+			return reply(Boom.forbidden())
 		}
 
 		return reply(Boom.badRequest())
