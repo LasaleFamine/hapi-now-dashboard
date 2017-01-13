@@ -1,4 +1,6 @@
-# [Now](https://zeit.co/now) dashboard in Hapi.js
+# [now](https://zeit.co/now) dashboard in Hapi.js
+
+[![Build Status](https://travis-ci.org/LasaleFamine/hapi-now-dashboard.svg?branch=master)](https://travis-ci.org/LasaleFamine/hapi-now-dashboard)
 
 > APIs and server for the [now-dashboard](https://github.com/lasalefamine/now-dashboard)
 
@@ -28,7 +30,7 @@ The `dev` command use `supervisor` for hot-reloading.
 If you want to change the port:
 
 	$ PORT=5000 yarn run dev
-	
+
 
 ## Test
 
