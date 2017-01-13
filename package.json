@@ -15,23 +15,20 @@
 		"semicolon": false,
 		"rules": {
       "camelcase": 0
-    }
+    },
+		"ignores": ["src/client/**"]
 	},
 	"scripts": {
 		"start": "node src/server.js",
 		"dev": "supervisor src/server.js",
-		"test": "xo --ignore src/client"
+		"test": "xo"
 	},
 	"dependencies": {
 		"boom": "^4.2.0",
 		"got": "^6.6.3",
 		"hapi": "^16.0.2",
-		"hapi-auth-bearer-token": "^4.3.1",
 		"inert": "^4.0.4",
-		"joi": "^10.1.0",
-		"njwt": "^0.3.2",
-		"node-uuid": "^1.4.7",
-		"uuid": "^3.0.1"
+		"joi": "^10.1.0"
 	},
 	"devDependencies": {
 		"supervisor": "^0.12.0",

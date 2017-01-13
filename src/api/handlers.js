@@ -1,6 +1,5 @@
 const got = require('got')
 const Boom = require('boom')
-const nJwt = require('njwt')
 
 const API_URL = 'https://api.zeit.co/now'
 
@@ -27,6 +26,29 @@ internals.deployments = (request, reply) => {
 	const token = request.query.token
 
 	got(`${API_URL}/deployments`, {
+		json: true,
+		headers: {
+			Authorization: `Bearer ${token}`
+		}
+	})
+	.then(res => {
+		console.log(res)
+		return reply(res.body)
+	})
+	.catch(err => {
+		if (err.statusCode === 403) {
+			return reply(Boom.forbidden())
+		}
+
+		return reply(Boom.badRequest())
+	})
+}
+
+internals.deploymentsFiles = (request, reply) => {
+	const token = request.query.token
+	const id = request.params.id
+
+	got(`${API_URL}/deployments/${id}/files`, {
 		json: true,
 		headers: {
 			Authorization: `Bearer ${token}`

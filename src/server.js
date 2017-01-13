@@ -2,10 +2,8 @@
 
 const Hapi = require('hapi')
 const Inert = require('inert')
-const AuthBarer = require('hapi-auth-bearer-token')
 const uuid = require('uuid')
 
-const validation = require('./auth')
 const routes = require('./api/routes')
 const clientRoutes = require('./client/routes')
 
@@ -20,7 +18,7 @@ server.register([Inert], err => {
 		throw err
 	}
 
-	//server.auth.strategy('simple', 'bearer-access-token', validation)
+	// server.auth.strategy('simple', 'bearer-access-token', validation)
 
 	server.route(clientRoutes)
 	server.route(routes)

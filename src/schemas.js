@@ -4,7 +4,7 @@ const Joi = require('joi')
 
 const internals = {
 	deploymentsSchema: {
-		token: Joi.string().error(new Error('No token specified.')),
+		token: Joi.string().error(new Error('No token specified.'))
 	}
 }
 

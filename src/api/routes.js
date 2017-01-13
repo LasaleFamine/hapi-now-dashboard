@@ -28,5 +28,14 @@ module.exports = [
 				query: Schema.deploymentsSchema.requiredKeys('token')
 			}
 		}
+	}, {
+		path: `${internals.restapi}/deployments/{id}/files`,
+		method: 'GET',
+		handler: handlers.deploymentsFiles,
+		config: {
+			validate: {
+				query: Schema.deploymentsSchema.requiredKeys('token')
+			}
+		}
 	}
 ]
