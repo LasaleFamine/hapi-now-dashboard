@@ -19,7 +19,7 @@ The server will start on `port 3000` for default. You can add an env var `$PORT`
 
  	$ PORT=5000 yarn start
 
-> NOTE: the clone will grab also the UI of this project ([now-dashboard](https://github.com/lasalefamine/now-dashboard)) and it will be exposed on the root of the server `http://localhost:3000/`
+> NOTE: the clone will grab also the UI of this project ([now-dashboard](https://github.com/lasalefamine/now-dashboard)) as ***submodule*** (`src/client/public/app`) and it will be exposed on the root of the server `http://localhost:3000/`
 
 ## Development
 
@@ -30,6 +30,11 @@ The `dev` command use `supervisor` for hot-reloading.
 If you want to change the port:
 
 	$ PORT=5000 yarn run dev
+
+## Change UI
+
+Simply change the `submodule` reference of my [now-dashboard](https://github.com/lasalefamine/now-dashboard) to your own inside the `src/client/public/app` folder.  
+The server will search for an `index.html`.  
 
 
 ## Test

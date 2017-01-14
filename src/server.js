@@ -2,7 +2,6 @@
 
 const Hapi = require('hapi')
 const Inert = require('inert')
-const uuid = require('uuid')
 
 const routes = require('./api/routes')
 const clientRoutes = require('./client/routes')
