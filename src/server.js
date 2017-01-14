@@ -26,9 +26,6 @@ server.register([Inert], err => {
 		if (err) {
 			throw err
 		}
-
-		process.env.SECRET_KEY = uuid.v4()
-		console.log('SECRET', process.env.SECRET_KEY)
 		console.log(`Server running at: ${server.info.uri}`)
 	})
 })
